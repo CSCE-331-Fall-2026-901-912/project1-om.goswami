@@ -1,39 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style1.css">
 <title>Om Goswami</title>
 </head>
 <body>
 
-<h1>Om Goswami</h1>
+<canvas id="bg-canvas"></canvas>
 
-<a href="index.html">Home</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="qualifications.html">Qualifications</a>
-<a href="activities.html">Activities</a>
-<a href="sandbox.html">Experience</a>
+<header class="site-header">
+    <div class="page-wrap">
+        <h1 class="site-title">Om Goswami</h1>
+        <nav class="site-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="qualifications.html">Qualifications</a>
+            <a href="activities.html">Activities</a>
+            <a href="sandbox.html">Experience</a>
+        </nav>
+    </div>
+</header>
 
-<img src="photo.jpg" width=200 alt="Profile Photo" >
+<main class="page-wrap">
 
-<h2>Introduction</h2>
-<p2>Hey Everyone, I'm Om Goswami, a Computer Science student at Texas A&M University interested in software engineering and AI. I enjoy building practical products, solving challenging problems, and turning ideas into software people can actually use. </p2>
+    <section class="hero">
+        <div class="hero-photo-frame">
+            <img class="hero-photo" src="photo.jpg" alt="Photo of Om Goswami">
+        </div>
+        <div class="hero-intro">
+            <p class="eyebrow">Computer Science &middot; Texas A&amp;M University</p>
+            <h2>Building software that holds up under real load.</h2>
+            <p>Hey, I'm Om. I like building practical products, solving problems that actually matter, and turning ideas into software people can use &mdash; whether that's a backend absorbing <strong>hundreds of requests a second</strong> or a workflow automated from hours down to minutes.</p>
+            <p>Outside of coursework, I worked as a Software Engineering Intern at <a href="https://usa.visa.com" target="_blank" rel="noopener">Visa</a>, teach Python as a Texas A&amp;M Peer Teacher, and lead regional operations for a nonprofit serving thousands of people.</p>
+            <div class="hero-actions">
+                <a class="btn" href="portfolio.html">View Portfolio</a>
+                <div class="social-links">
+                    <a class="social-link" href="https://www.linkedin.com/in/ogoswami" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.24h4.56V23H.22V8.24zM8.02 8.24h4.37v2.01h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V23h-4.56v-6.94c0-1.66-.03-3.79-2.31-3.79-2.32 0-2.68 1.81-2.68 3.67V23H8.02V8.24z"></path></svg>
+                    </a>
+                    <a class="social-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.67.79.55C20.21 21.38 23.5 17.07 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="section">
+        <div class="section-heading">
+            <h2 class="section-title">Explore My Work</h2>
+            <span class="section-count">03 sections</span>
+        </div>
+        <div class="card-grid">
 
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16v6H4z"></path>
+                            <path d="M4 14h16v6H4z"></path>
+                            <circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"></circle>
+                            <circle cx="7.5" cy="17" r="0.6" fill="currentColor" stroke="none"></circle>
+                            <path d="M12 10.5v3"></path>
+                        </svg>
+                        <h3 class="card-title">Portfolio</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">Portfolio</h3>
+                            <p class="card-desc">Technical projects spanning AI infrastructure, data engineering, and full-stack development.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="portfolio.html">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<h2>Explore my work</h2>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 3h7l4 4v14H7z"></path>
+                            <path d="M14 3v4h4"></path>
+                            <path d="M9.5 13h6"></path>
+                            <path d="M9.5 16.5h6"></path>
+                        </svg>
+                        <h3 class="card-title">Qualifications</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">Qualifications</h3>
+                            <p class="card-desc">My resume, technical skills, and the areas of computer science I'm most drawn to.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="qualifications.html">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<h3>Portfolio</h3>
-<a href="portfolio.html">View</a>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="8" r="3"></circle>
+                            <path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"></path>
+                            <path d="M16 5.5c1.4 0.3 2.5 1.6 2.5 3.1 0 1.5-1.1 2.8-2.5 3.1"></path>
+                            <path d="M15.5 14c2.4 0.4 4 2.6 4 5.5"></path>
+                        </svg>
+                        <h3 class="card-title">Activities</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">Activities</h3>
+                            <p class="card-desc">Clubs, teaching, community leadership, and how I spend my time outside of code.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="activities.html">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </section>
 
-<h3>Qualifications</h3>
-<a href="qualifications.html">View</a>
+</main>
 
-<h3>Activities</h3>
-<a href="activities.html">View</a>
+<footer class="site-footer">
+    <p>&copy; 2026 Om Goswami</p>
+</footer>
 
-<p>&copy; 2026 Om Goswami</p>
+<script>
+(function () {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var canvas = document.getElementById("bg-canvas");
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    var width, height, nodes = [];
+    var mouse = { x: null, y: null };
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+        var count = Math.min(85, Math.max(34, Math.floor((width * height) / 20000)));
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.12,
+                vy: (Math.random() - 0.5) * 0.12,
+                r: 1.4 + Math.random() * 1.6
+            });
+        }
+    }
+
+    function step() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (var i = 0; i < nodes.length; i++) {
+            var n = nodes[i];
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > width) n.vx *= -1;
+            if (n.y < 0 || n.y > height) n.vy *= -1;
+
+            for (var j = i + 1; j < nodes.length; j++) {
+                var m = nodes[j];
+                var dx = n.x - m.x, dy = n.y - m.y;
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    ctx.strokeStyle = "rgba(79, 163, 154, " + (0.2 * (1 - dist / 150)) + ")";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(n.x, n.y);
+                    ctx.lineTo(m.x, m.y);
+                    ctx.stroke();
+                }
+            }
+
+            if (mouse.x !== null) {
+                var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+                var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                if (mdist < 170) {
+                    ctx.strokeStyle = "rgba(217, 138, 79, " + (0.32 * (1 - mdist / 170)) + ")";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(n.x, n.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                }
+            }
+
+            ctx.fillStyle = "rgba(79, 163, 154, 0.65)";
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        if (!reduceMotion) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    window.addEventListener("resize", function () {
+        resize();
+        initNodes();
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener("mouseleave", function () {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    resize();
+    initNodes();
+    step();
+})();
+</script>
 
 </body>
 </html>

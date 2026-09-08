@@ -1,39 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style1.css">
 <meta charset="UTF-8">
-<title>Om Goswami</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">
+<title>Om Goswami - Portfolio</title>
 </head>
 <body>
 
-<h1>Om Goswami</h1>
+<canvas id="bg-canvas"></canvas>
 
-<a href="index.html">Home</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="qualifications.html">Qualifications</a>
-<a href="activities.html">Activities</a>
-<a href="sandbox.html">Experience</a>
+<header class="site-header">
+    <div class="page-wrap">
+        <h1 class="site-title">Om Goswami</h1>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="qualifications.html">Qualifications</a>
+            <a href="activities.html">Activities</a>
+            <a href="sandbox.html">Experience</a>
+        </nav>
+    </div>
+</header>
 
-<h2>Portfolio</h2>
+<main class="page-wrap">
 
-<h3>AI-Powered Incident Response & SRE Platform</h3>
-<p>Built an autonomous AI platform (Python, FastAPI, React, LiteLLM, ChromaDB) that continuously monitors a production-style web service under ~450 requests/sec, automatically detecting software failures and performing root cause analysis to identify faulty Git commits. An LLM-powered investigation pipeline analyzes Git commit history and code diffs, retrieves operational runbooks with RAG, estimates business impact, and generates Slack incident reports. Human-in-the-loop remediation automates Git rollback, redeployment, and live metric verification, validated across 4 realistic production failure scenarios.</p>
-<a href="https://google.com">GitHub</a>
+    <section class="section">
+        <div class="section-heading">
+            <h2 class="section-title">Portfolio</h2>
+            <span class="section-count">04 projects</span>
+        </div>
+        <div class="card-grid">
 
-<h3>Smart Traffic Monitoring and Alert System (Oculon)</h3>
-<p>Built Oculon (React, Vite, Tailwind, Flask, Twilio), a dashboard aggregating 12 live HLS feeds from 4 state DOT camera networks that flags collisions by matching playback position to incident windows derived from frame-level motion analysis. Engineered a pluggable alert pipeline dispatching incident reports to Discord with Twilio SMS fallback, fixed cross-browser playback with hls.js, and shipped the app as one Vercel serverless deployment.</p>
-<a href="https://google.com">GitHub</a>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="6" rx="1"></rect>
+                            <rect x="4" y="14" width="16" height="6" rx="1"></rect>
+                            <circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"></circle>
+                            <circle cx="7.5" cy="17" r="0.6" fill="currentColor" stroke="none"></circle>
+                            <path d="M15 16.2l1.4 1.6 2.6-3"></path>
+                        </svg>
+                        <h3 class="card-title">AI-Powered Incident Response &amp; SRE Platform</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">AI-Powered Incident Response &amp; SRE Platform</h3>
+                            <p class="card-desc">Autonomous platform (Python, FastAPI, React, LiteLLM, ChromaDB) monitoring a service under ~450 req/sec, performing root cause analysis to identify faulty Git commits. An LLM pipeline analyzes commit diffs, retrieves runbooks with RAG, and generates Slack incident reports; human-in-the-loop remediation automates rollback and live verification across 4 failure scenarios.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<h3>End-to-End Data Engineering & MLOps Pipeline</h3>
-<p>Designed a governed data lake on AWS S3 (AWS, Databricks, PySpark, PyTorch, MLflow) with Glue for ETL/cataloging and Lake Formation for access control, publishing datasets through DataZone for discovery. Extended the pipeline into Databricks with a distributed bronze-silver-gold Delta Lake pipeline in PySpark to clean and reshape raw Census data into versioned Unity Catalog tables, then trained a PyTorch neural network to predict state-level population growth, tracking experiments and model versions through MLflow.</p>
-<a href="https://google.com">GitHub</a>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4.5"></circle>
+                            <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"></circle>
+                            <path d="M12 3v2.5"></path>
+                            <path d="M12 18.5V21"></path>
+                            <path d="M3 12h2.5"></path>
+                            <path d="M18.5 12H21"></path>
+                        </svg>
+                        <h3 class="card-title">Smart Traffic Monitoring &amp; Alert System (Oculon)</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">Oculon</h3>
+                            <p class="card-desc">Dashboard (React, Vite, Tailwind, Flask, Twilio) aggregating 12 live HLS feeds from 4 state DOT camera networks, flagging collisions via frame-level motion analysis. Pluggable alerts dispatch to Discord with Twilio SMS fallback; shipped as one Vercel serverless deployment.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="https://omgoswami-om25.vercel.app" target="_blank" rel="noopener">Live Demo</a>
+                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<h3>Moodify</h3>
-<p>A hackathon project that recommends music based on facial expression analysis, using computer vision to read mood and match it to a curated playlist.</p>
-<a href="https://google.com">GitHub</a>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5.5" rx="7" ry="2.5"></ellipse>
+                            <path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path>
+                            <path d="M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path>
+                        </svg>
+                        <h3 class="card-title">End-to-End Data Engineering &amp; MLOps Pipeline</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">Data &amp; MLOps Pipeline</h3>
+                            <p class="card-desc">Governed data lake on AWS S3 (Glue, Lake Formation, DataZone), extended into Databricks with a bronze-silver-gold Delta Lake pipeline in PySpark reshaping Census data into Unity Catalog tables. Trained a PyTorch model to predict state population growth, tracked through MLflow.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<p>&copy; 2026 Om Goswami</p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-face flip-front">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="17" r="2.3"></circle>
+                            <circle cx="18" cy="15" r="2.3"></circle>
+                            <path d="M11.3 17V6.5l9-2v10.5"></path>
+                        </svg>
+                        <h3 class="card-title">Moodify</h3>
+                    </div>
+                    <div class="flip-face flip-back">
+                        <div>
+                            <h3 class="card-title">Moodify</h3>
+                            <p class="card-desc">A hackathon project that recommends music based on facial expression analysis, using computer vision to read mood and match it to a curated playlist.</p>
+                        </div>
+                        <div class="card-links">
+                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Om Goswami</p>
+</footer>
+
+<script>
+(function () {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var canvas = document.getElementById("bg-canvas");
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    var width, height, nodes = [];
+    var mouse = { x: null, y: null };
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+        var count = Math.min(85, Math.max(34, Math.floor((width * height) / 20000)));
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.12,
+                vy: (Math.random() - 0.5) * 0.12,
+                r: 1.4 + Math.random() * 1.6
+            });
+        }
+    }
+
+    function step() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (var i = 0; i < nodes.length; i++) {
+            var n = nodes[i];
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > width) n.vx *= -1;
+            if (n.y < 0 || n.y > height) n.vy *= -1;
+
+            for (var j = i + 1; j < nodes.length; j++) {
+                var m = nodes[j];
+                var dx = n.x - m.x, dy = n.y - m.y;
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    ctx.strokeStyle = "rgba(79, 163, 154, " + (0.2 * (1 - dist / 150)) + ")";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(n.x, n.y);
+                    ctx.lineTo(m.x, m.y);
+                    ctx.stroke();
+                }
+            }
+
+            if (mouse.x !== null) {
+                var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+                var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                if (mdist < 170) {
+                    ctx.strokeStyle = "rgba(217, 138, 79, " + (0.32 * (1 - mdist / 170)) + ")";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(n.x, n.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                }
+            }
+
+            ctx.fillStyle = "rgba(79, 163, 154, 0.65)";
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        if (!reduceMotion) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    window.addEventListener("resize", function () {
+        resize();
+        initNodes();
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener("mouseleave", function () {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    resize();
+    initNodes();
+    step();
+})();
+</script>
 
 </body>
 </html>

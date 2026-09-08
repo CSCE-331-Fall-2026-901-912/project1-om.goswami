@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Goswami - My Experience</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --bg: #111214;
+        --surface: #1a1b1e;
+        --border: #2a2c30;
+        --ink: #f4f0e8;
+        --ink-muted: #a6a29b;
+        --accent: #d98a4f;
+        --accent-soft: rgba(217, 138, 79, 0.18);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg);
+        color: var(--ink-muted);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.65;
+    }
+
+    a {
+        color: var(--accent);
+    }
+
+    .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 76px 24px 96px;
+    }
+
+    /* ---------- header ---------- */
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.85rem;
+        color: var(--ink-muted);
+        text-decoration: none;
+        margin-bottom: 48px;
+    }
+
+    .back-link:hover {
+        color: var(--accent);
+    }
+
+    .back-link svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 76px;
+    }
+
+    .kicker {
+        font-family: ui-monospace, "SF Mono", Consolas, Menlo, monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 14px;
+    }
+
+    h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        text-wrap: balance;
+    }
+
+    .page-header p {
+        max-width: 46ch;
+        margin: 0 auto;
+        color: var(--ink-muted);
+        font-size: 1.02rem;
+    }
+
+    /* ---------- spine / timeline ---------- */
+
+    .spine {
+        position: relative;
+    }
+
+    .spine::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 26px;
+        bottom: 26px;
+        width: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, transparent, var(--border) 8%, var(--border) 92%, transparent);
+    }
+
+    .milestone {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 56px;
+        opacity: 0;
+        transform: translateY(14px);
+        animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .milestone:last-child {
+        margin-bottom: 0;
+    }
+
+    .milestone:nth-child(1) { animation-delay: 0.05s; }
+    .milestone:nth-child(2) { animation-delay: 0.18s; }
+    .milestone:nth-child(3) { animation-delay: 0.31s; }
+
+    .node {
+        position: relative;
+        z-index: 1;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background-color: var(--bg);
+        border: 2px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+        transition: border-color 0.2s ease;
+    }
+
+    .node svg {
+        width: 22px;
+        height: 22px;
+        color: var(--ink-muted);
+        transition: color 0.2s ease;
+    }
+
+    .milestone.is-current .node {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 6px var(--accent-soft);
+        animation: pulse 2.6s ease-in-out infinite;
+    }
+
+    .milestone.is-current .node svg {
+        color: var(--accent);
+    }
+
+    .card {
+        width: 100%;
+        max-width: 600px;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 32px 36px;
+        text-align: left;
+    }
+
+    .card .meta {
+        font-family: ui-monospace, "SF Mono", Consolas, Menlo, monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        margin: 0 0 10px;
+    }
+
+    .card h2 {
+        margin: 0 0 4px;
+        font-size: 1.25rem;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+    }
+
+    .card .role {
+        margin: 0 0 16px;
+        font-size: 0.92rem;
+        color: var(--ink-muted);
+        font-style: italic;
+    }
+
+    .card .desc {
+        margin: 0 0 20px;
+        font-size: 0.96rem;
+        color: var(--ink-muted);
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.78rem;
+        color: var(--ink-muted);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        padding: 5px 11px;
+    }
+
+    .tag::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        flex-shrink: 0;
+    }
+
+    /* ---------- footer ---------- */
+
+    .page-footer {
+        text-align: center;
+        margin-top: 64px;
+        font-size: 0.85rem;
+        color: var(--ink-muted);
+    }
+
+    @keyframes rise {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            box-shadow: 0 0 0 6px var(--accent-soft);
+        }
+        50% {
+            box-shadow: 0 0 0 10px transparent;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .milestone {
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+        .milestone.is-current .node {
+            animation: none;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .wrap {
+            padding: 48px 16px 72px;
+        }
+        .card {
+            padding: 26px 24px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+    <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M11 18l-6-6 6-6"></path></svg>
+        Om Goswami
+    </a>
+
+    <header class="page-header">
+        <p class="kicker">GenAI Sandbox</p>
+        <h1>My Experience</h1>
+        <p>Three milestones that shaped how I think about building software &mdash; from my first AI project to shipping code that production teams depend on.</p>
+    </header>
+
+    <div class="spine">
+
+        <div class="milestone">
+            <span class="node">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l2.2 4.6 5 .7-3.6 3.6.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.6 5-.7z"></path>
+                </svg>
+            </span>
+            <div class="card">
+                <p class="meta">Jan &ndash; Apr 2024</p>
+                <h2>TRAIN Artificial Intelligence Fellowship</h2>
+                <p class="role">AI Fellow</p>
+                <p class="desc">Designed and built an end-to-end AI-powered educational tool to simplify machine learning concepts for beginners, implementing core algorithms in Python and training NLP models with the Transformers library. Integrated the Hugging Face API to power a conversational Q&amp;A interface, letting beginners ask natural-language questions and get real-time, contextual explanations.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Hugging Face API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone">
+            <span class="node">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 4L2.5 8.5 12 13l9.5-4.5z"></path>
+                    <path d="M6 10.7v5c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-5"></path>
+                    <path d="M21.5 8.5v6"></path>
+                </svg>
+            </span>
+            <div class="card">
+                <p class="meta">Aug 2025 &ndash; Present</p>
+                <h2>Texas A&amp;M University</h2>
+                <p class="role">Undergraduate Teaching Assistant</p>
+                <p class="desc">Teach Python fundamentals &mdash; loops, conditionals, functions, and data structures &mdash; to 200+ first-year engineering students each semester through weekly office hours, 1:1 mentoring, and hands-on debugging sessions. Perform code review on programming assignments and deliver detailed, code-level feedback on software design and debugging practices.</p>
+                <div class="tags">
+                    <span class="tag">200+ Students</span>
+                    <span class="tag">Mentoring</span>
+                    <span class="tag">Code Review</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone is-current">
+            <span class="node">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="4" width="16" height="6" rx="1"></rect>
+                    <rect x="4" y="14" width="16" height="6" rx="1"></rect>
+                    <circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"></circle>
+                    <circle cx="7.5" cy="17" r="0.6" fill="currentColor" stroke="none"></circle>
+                </svg>
+            </span>
+            <div class="card">
+                <p class="meta">May 2026 &ndash; Present</p>
+                <h2>Visa</h2>
+                <p class="role">Software Engineering Intern</p>
+                <p class="desc">Design, test, and deploy the backend for an internal Vendor Intelligence Portal in an Agile environment, deploying through a CI/CD pipeline to a live production environment used by 50+ analysts and engineers, using FastAPI, PostgreSQL, and Pydantic. Develop automation scripts orchestrating Claude Sonnet and Opus via LiteLLM to automate vendor intelligence extraction, reducing manual research and reporting effort by roughly 70%.</p>
+                <div class="tags">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">LiteLLM</span>
+                    <span class="tag">~70% Time Saved</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="page-footer">&copy; 2026 Om Goswami &mdash; content generated with genAI per Project 1 sandbox requirements</p>
+
+</div>
+
+</body>
+</html>

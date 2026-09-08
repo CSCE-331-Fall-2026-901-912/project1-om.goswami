@@ -1,36 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style1.css">
 <meta charset="UTF-8">
-<title>Om Goswami</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style1.css">
+<title>Om Goswami - Qualifications</title>
 </head>
 <body>
 
-<h1>Om Goswami</h1>
+<canvas id="bg-canvas"></canvas>
 
-<a href="index.html">Home</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="qualifications.html">Qualifications</a>
-<a href="activities.html">Activities</a>
-<a href="sandbox.html">Experience</a>
+<header class="site-header">
+    <div class="page-wrap">
+        <h1 class="site-title">Om Goswami</h1>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="qualifications.html" class="active">Qualifications</a>
+            <a href="activities.html">Activities</a>
+            <a href="sandbox.html">Experience</a>
+        </nav>
+    </div>
+</header>
 
-<iframe 
-  src="https://drive.google.com/file/d/1731EPcQfVVk3K4AFzb8M4-44n2rOvIVD/preview"
-  width="50%" 
-  height="800px">
-</iframe>
+<main class="page-wrap">
 
-<h2>Technical Skills</h2>
-<p>Languages: Python, C/C++, Java, JavaScript/TypeScript, SQL, HTML/CSS, Assembly, Haskell, R</p>
-<p>Databases & Cloud: AWS (S3, Glue, Lake Formation, Athena, DataZone), Databricks (Delta Lake, Unity Catalog), Firebase, PostgreSQL,
-MySQL, NoSQL</p>
-<p>Frameworks: FastAPI, Node.js, React, Streamlit, Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, OpenCV, NLTK, LiteLLM</p>
+    <section class="section">
+        <div class="section-heading">
+            <h2 class="section-title">Qualifications</h2>
+            <span class="section-count">resume &middot; skills &middot; interests</span>
+        </div>
 
-<h2>CS Interests</h2>
-<p>I'm most drawn to backend and systems-level engineering, particularly building the infrastructure other people rely on without ever thinking about it, along with AI/ML engineering, especially deploying and orchestrating LLMs in production. Interning at Visa, where I built REST APIs used daily by dozens of analysts and automated internal workflows with LLMs through LiteLLM, is what really pulled me toward both.</p>
+        <div class="qual-grid">
 
-<p>&copy; 2026 Om Goswami</p>
+            <div class="qual-resume">
+                <iframe src="https://drive.google.com/file/d/1731EPcQfVVk3K4AFzb8M4-44n2rOvIVD/preview" title="Om Goswami Resume PDF"></iframe>
+            </div>
+
+            <div>
+                <div class="qual-box">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li><strong>Languages:</strong> Python, C/C++, Java, JavaScript/TypeScript, SQL, HTML/CSS, Assembly, Haskell, R</li>
+                        <li><strong>Frameworks:</strong> FastAPI, Node.js, React, Streamlit, Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, OpenCV, NLTK, LiteLLM</li>
+                        <li><strong>Databases &amp; Cloud:</strong> AWS (S3, Glue, Lake Formation, Athena, DataZone), Databricks (Delta Lake, Unity Catalog), Firebase, PostgreSQL, MySQL, NoSQL</li>
+                    </ul>
+                </div>
+
+                <div class="qual-box">
+                    <h3>CS Interests</h3>
+                    <p>I'm most drawn to backend and systems-level engineering, particularly building the infrastructure other people rely on without ever thinking about it, along with AI/ML engineering, especially deploying and orchestrating LLMs in production. Interning at <a href="https://usa.visa.com" target="_blank" rel="noopener">Visa</a>, where I built REST APIs used daily by dozens of analysts and automated internal workflows with LLMs through LiteLLM, is what really pulled me toward both. It's also why I'm minoring in <a href="https://cse.tamu.edu" target="_blank" rel="noopener">AI in Business</a> at Texas A&amp;M alongside my Computer Science degree.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Om Goswami</p>
+</footer>
+
+<script>
+(function () {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var canvas = document.getElementById("bg-canvas");
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext("2d");
+    var width, height, nodes = [];
+    var mouse = { x: null, y: null };
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+        var count = Math.min(85, Math.max(34, Math.floor((width * height) / 20000)));
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.12,
+                vy: (Math.random() - 0.5) * 0.12,
+                r: 1.4 + Math.random() * 1.6
+            });
+        }
+    }
+
+    function step() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (var i = 0; i < nodes.length; i++) {
+            var n = nodes[i];
+            n.x += n.vx;
+            n.y += n.vy;
+            if (n.x < 0 || n.x > width) n.vx *= -1;
+            if (n.y < 0 || n.y > height) n.vy *= -1;
+
+            for (var j = i + 1; j < nodes.length; j++) {
+                var m = nodes[j];
+                var dx = n.x - m.x, dy = n.y - m.y;
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    ctx.strokeStyle = "rgba(79, 163, 154, " + (0.2 * (1 - dist / 150)) + ")";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(n.x, n.y);
+                    ctx.lineTo(m.x, m.y);
+                    ctx.stroke();
+                }
+            }
+
+            if (mouse.x !== null) {
+                var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+                var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+                if (mdist < 170) {
+                    ctx.strokeStyle = "rgba(217, 138, 79, " + (0.32 * (1 - mdist / 170)) + ")";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(n.x, n.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                }
+            }
+
+            ctx.fillStyle = "rgba(79, 163, 154, 0.65)";
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        if (!reduceMotion) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    window.addEventListener("resize", function () {
+        resize();
+        initNodes();
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener("mouseleave", function () {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    resize();
+    initNodes();
+    step();
+})();
+</script>
 
 </body>
 </html>
