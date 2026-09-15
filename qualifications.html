@@ -3,54 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style1.css">
-<title>Om Goswami - Qualifications</title>
+<meta name="description" content="Om Goswami's resume, technical skill inventory, and CS interests spanning backend systems and applied AI/ML engineering.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23d9824a'/%3E%3Ctext x='50' y='69' font-family='Georgia, serif' font-size='58' font-weight='700' fill='%23241f18' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
+<link id="page-style" rel="stylesheet" href="style1.css">
+<script src="assets/style-init.js"></script>
+<title>Om Goswami &middot; Qualifications</title>
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
-    <div class="page-wrap">
-        <h1 class="site-title">Om Goswami</h1>
-        <nav class="site-nav">
+    <div class="page-wrap header-row">
+        <a class="site-mark" href="index.html">
+            <span class="site-mark-name">Om Goswami</span>
+            <span class="site-mark-role">Software Engineer</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav">
             <a href="index.html">Home</a>
             <a href="portfolio.html">Portfolio</a>
-            <a href="qualifications.html" class="active">Qualifications</a>
+            <a href="qualifications.html" class="active" aria-current="page">Qualifications</a>
             <a href="activities.html">Activities</a>
             <a href="sandbox.html">Experience</a>
+            <button id="styleToggle" class="style-toggle" type="button" aria-label="Switch visual style">
+                <span class="style-toggle-track"><span class="style-toggle-thumb"></span></span>
+                <span class="style-toggle-label">Style <span id="styleToggleValue">02</span></span>
+            </button>
         </nav>
     </div>
 </header>
 
-<main class="page-wrap">
+<main class="page-wrap" id="main">
 
     <section class="section">
         <div class="section-heading">
-            <h2 class="section-title">Qualifications</h2>
+            <h1 class="section-title">Qualifications</h1>
             <span class="section-count">resume &middot; skills &middot; interests</span>
         </div>
 
-        <div class="qual-grid">
+        <div class="qual-layout">
 
             <div class="qual-resume">
-                <iframe src="https://drive.google.com/file/d/1731EPcQfVVk3K4AFzb8M4-44n2rOvIVD/preview" title="Om Goswami Resume PDF"></iframe>
+                <iframe src="https://drive.google.com/file/d/1731EPcQfVVk3K4AFzb8M4-44n2rOvIVD/preview" title="Om Goswami Resume PDF" loading="lazy"></iframe>
             </div>
 
-            <div>
-                <div class="qual-box">
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li><strong>Languages:</strong> Python, C/C++, Java, JavaScript/TypeScript, SQL, HTML/CSS, Assembly, Haskell, R</li>
-                        <li><strong>Frameworks:</strong> FastAPI, Node.js, React, Streamlit, Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, OpenCV, NLTK, LiteLLM</li>
-                        <li><strong>Databases &amp; Cloud:</strong> AWS (S3, Glue, Lake Formation, Athena, DataZone), Databricks (Delta Lake, Unity Catalog), Firebase, PostgreSQL, MySQL, NoSQL</li>
-                    </ul>
+            <div class="qual-side">
+
+                <h2 class="qual-section-title">Technical Skills</h2>
+                <div class="skills-inventory">
+                    <div class="skill-group">
+                        <h3 class="skill-label">Languages</h3>
+                        <p class="skill-list">Python, C/C++, Java, JavaScript/TypeScript, SQL, HTML/CSS, Assembly, Haskell, R</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Frameworks</h3>
+                        <p class="skill-list">FastAPI, Node.js, React, Streamlit, LiteLLM</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Infrastructure &amp; Cloud</h3>
+                        <p class="skill-list">AWS (S3, Glue, Lake Formation, Athena, DataZone), Databricks (Delta Lake, Unity Catalog), Firebase, PostgreSQL, MySQL, NoSQL</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-label">Data &amp; ML</h3>
+                        <p class="skill-list">Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, OpenCV, NLTK</p>
+                    </div>
                 </div>
 
-                <div class="qual-box">
-                    <h3>CS Interests</h3>
-                    <p>I'm most drawn to backend and systems-level engineering, particularly building the infrastructure other people rely on without ever thinking about it, along with AI/ML engineering, especially deploying and orchestrating LLMs in production. Interning at <a href="https://usa.visa.com" target="_blank" rel="noopener">Visa</a>, where I built REST APIs used daily by dozens of analysts and automated internal workflows with LLMs through LiteLLM, is what really pulled me toward both. It's also why I'm minoring in <a href="https://cse.tamu.edu" target="_blank" rel="noopener">AI in Business</a> at Texas A&amp;M alongside my Computer Science degree.</p>
+                <div class="qual-note">
+                    <h2>CS Interests</h2>
+                    <p>I like backend and systems work, the kind of thing that just has to run quietly in the background without anyone noticing it. Lately I've gotten just as interested in AI/ML engineering, specifically getting LLMs running reliably in production instead of just in a notebook. Interning at <a href="https://usa.visa.com" target="_blank" rel="noopener">Visa</a> is really what did it. I was building REST APIs that analysts used every day, and automating part of their workflow with LLMs through LiteLLM. That's also why I added a minor in <a href="https://cse.tamu.edu" target="_blank" rel="noopener">AI in Business</a> alongside my CS degree.</p>
                 </div>
+
+                <a class="btn btn-ghost" href="Goswami_Om_Resume.pdf" download>Download R&eacute;sum&eacute; &darr;</a>
+
             </div>
 
         </div>
@@ -59,105 +90,12 @@
 </main>
 
 <footer class="site-footer">
-    <p>&copy; 2026 Om Goswami</p>
+    <div class="page-wrap">
+        <p>&copy; 2026 Om Goswami</p>
+    </div>
 </footer>
 
-<script>
-(function () {
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var canvas = document.getElementById("bg-canvas");
-    if (!canvas || !canvas.getContext) return;
-    var ctx = canvas.getContext("2d");
-    var width, height, nodes = [];
-    var mouse = { x: null, y: null };
-
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-
-    function initNodes() {
-        var count = Math.min(85, Math.max(34, Math.floor((width * height) / 20000)));
-        nodes = [];
-        for (var i = 0; i < count; i++) {
-            nodes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.12,
-                vy: (Math.random() - 0.5) * 0.12,
-                r: 1.4 + Math.random() * 1.6
-            });
-        }
-    }
-
-    function step() {
-        ctx.clearRect(0, 0, width, height);
-
-        for (var i = 0; i < nodes.length; i++) {
-            var n = nodes[i];
-            n.x += n.vx;
-            n.y += n.vy;
-            if (n.x < 0 || n.x > width) n.vx *= -1;
-            if (n.y < 0 || n.y > height) n.vy *= -1;
-
-            for (var j = i + 1; j < nodes.length; j++) {
-                var m = nodes[j];
-                var dx = n.x - m.x, dy = n.y - m.y;
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.strokeStyle = "rgba(79, 163, 154, " + (0.2 * (1 - dist / 150)) + ")";
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(m.x, m.y);
-                    ctx.stroke();
-                }
-            }
-
-            if (mouse.x !== null) {
-                var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
-                var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-                if (mdist < 170) {
-                    ctx.strokeStyle = "rgba(217, 138, 79, " + (0.32 * (1 - mdist / 170)) + ")";
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    ctx.stroke();
-                }
-            }
-
-            ctx.fillStyle = "rgba(79, 163, 154, 0.65)";
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        if (!reduceMotion) {
-            requestAnimationFrame(step);
-        }
-    }
-
-    window.addEventListener("resize", function () {
-        resize();
-        initNodes();
-    });
-
-    window.addEventListener("mousemove", function (e) {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    window.addEventListener("mouseleave", function () {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    resize();
-    initNodes();
-    step();
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>

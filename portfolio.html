@@ -3,128 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style1.css">
-<title>Om Goswami - Portfolio</title>
+<meta name="description" content="Selected software projects by Om Goswami: AI infrastructure, incident response tooling, data engineering pipelines, and full-stack applications.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23d9824a'/%3E%3Ctext x='50' y='69' font-family='Georgia, serif' font-size='58' font-weight='700' fill='%23241f18' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
+<link id="page-style" rel="stylesheet" href="style1.css">
+<script src="assets/style-init.js"></script>
+<title>Om Goswami &middot; Portfolio</title>
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
-    <div class="page-wrap">
-        <h1 class="site-title">Om Goswami</h1>
-        <nav class="site-nav">
+    <div class="page-wrap header-row">
+        <a class="site-mark" href="index.html">
+            <span class="site-mark-name">Om Goswami</span>
+            <span class="site-mark-role">Software Engineer</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav">
             <a href="index.html">Home</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="portfolio.html" class="active" aria-current="page">Portfolio</a>
             <a href="qualifications.html">Qualifications</a>
             <a href="activities.html">Activities</a>
             <a href="sandbox.html">Experience</a>
+            <button id="styleToggle" class="style-toggle" type="button" aria-label="Switch visual style">
+                <span class="style-toggle-track"><span class="style-toggle-thumb"></span></span>
+                <span class="style-toggle-label">Style <span id="styleToggleValue">02</span></span>
+            </button>
         </nav>
     </div>
 </header>
 
-<main class="page-wrap">
+<main class="page-wrap" id="main">
 
     <section class="section">
         <div class="section-heading">
-            <h2 class="section-title">Portfolio</h2>
+            <h1 class="section-title">Portfolio</h1>
             <span class="section-count">04 projects</span>
         </div>
-        <div class="card-grid">
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="4" width="16" height="6" rx="1"></rect>
-                            <rect x="4" y="14" width="16" height="6" rx="1"></rect>
-                            <circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"></circle>
-                            <circle cx="7.5" cy="17" r="0.6" fill="currentColor" stroke="none"></circle>
-                            <path d="M15 16.2l1.4 1.6 2.6-3"></path>
-                        </svg>
-                        <h3 class="card-title">AI-Powered Incident Response &amp; SRE Platform</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">AI-Powered Incident Response &amp; SRE Platform</h3>
-                            <p class="card-desc">Autonomous platform (Python, FastAPI, React, LiteLLM, ChromaDB) monitoring a service under ~450 req/sec, performing root cause analysis to identify faulty Git commits. An LLM pipeline analyzes commit diffs, retrieves runbooks with RAG, and generates Slack incident reports; human-in-the-loop remediation automates rollback and live verification across 4 failure scenarios.</p>
-                        </div>
-                        <div class="card-links">
-                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
-                        </div>
+        <div class="project-list">
+
+            <article class="project">
+                <div class="project-head">
+                    <span class="project-num">01</span>
+                    <h2 class="project-title">AI-Powered Incident Response &amp; SRE Platform</h2>
+                </div>
+                <p class="project-desc">I built this to watch a production-style service running at around 450 requests a second and catch problems before they turn into real outages. When something breaks, it traces back through Git history to find the commit that likely caused it, pulls the relevant runbook with RAG, and writes up a Slack report so whoever's on call isn't starting from zero. I also built a human-in-the-loop rollback flow and tested it against four different failure scenarios (Python, FastAPI, React, LiteLLM, ChromaDB).</p>
+                <div class="project-meta">
+                    <span class="project-stack">Python &middot; FastAPI &middot; React &middot; LiteLLM &middot; ChromaDB &middot; RAG</span>
+                    <div class="project-links">
+                        <a href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub &#8599;</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="4.5"></circle>
-                            <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"></circle>
-                            <path d="M12 3v2.5"></path>
-                            <path d="M12 18.5V21"></path>
-                            <path d="M3 12h2.5"></path>
-                            <path d="M18.5 12H21"></path>
-                        </svg>
-                        <h3 class="card-title">Smart Traffic Monitoring &amp; Alert System (Oculon)</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">Oculon</h3>
-                            <p class="card-desc">Dashboard (React, Vite, Tailwind, Flask, Twilio) aggregating 12 live HLS feeds from 4 state DOT camera networks, flagging collisions via frame-level motion analysis. Pluggable alerts dispatch to Discord with Twilio SMS fallback; shipped as one Vercel serverless deployment.</p>
-                        </div>
-                        <div class="card-links">
-                            <a class="card-link" href="https://omgoswami-om25.vercel.app" target="_blank" rel="noopener">Live Demo</a>
-                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
-                        </div>
+            <article class="project">
+                <div class="project-head">
+                    <span class="project-num">02</span>
+                    <h2 class="project-title">Oculon: Smart Traffic Monitoring &amp; Alert System</h2>
+                </div>
+                <p class="project-desc">Oculon pulls in 12 live camera feeds from four state DOT networks and flags likely collisions by matching what's on screen against frame-level motion data. When it catches something, it sends an alert to Discord, with a Twilio SMS backup in case Discord's down. Most of the debugging time went into cross-browser video playback (hls.js was the culprit) before I shipped it as one Vercel deployment.</p>
+                <div class="project-meta">
+                    <span class="project-stack">React &middot; Vite &middot; Tailwind &middot; Flask &middot; Twilio &middot; hls.js</span>
+                    <div class="project-links">
+                        <a href="https://omgoswami-om25.vercel.app" target="_blank" rel="noopener">Live Demo &#8599;</a>
+                        <a href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub &#8599;</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <ellipse cx="12" cy="5.5" rx="7" ry="2.5"></ellipse>
-                            <path d="M5 5.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path>
-                            <path d="M5 11.5v6c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-6"></path>
-                        </svg>
-                        <h3 class="card-title">End-to-End Data Engineering &amp; MLOps Pipeline</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">Data &amp; MLOps Pipeline</h3>
-                            <p class="card-desc">Governed data lake on AWS S3 (Glue, Lake Formation, DataZone), extended into Databricks with a bronze-silver-gold Delta Lake pipeline in PySpark reshaping Census data into Unity Catalog tables. Trained a PyTorch model to predict state population growth, tracked through MLflow.</p>
-                        </div>
-                        <div class="card-links">
-                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
-                        </div>
+            <article class="project">
+                <div class="project-head">
+                    <span class="project-num">03</span>
+                    <h2 class="project-title">End-to-End Data Engineering &amp; MLOps Pipeline</h2>
+                </div>
+                <p class="project-desc">I set up a governed data lake on AWS S3, with Glue handling the ETL and Lake Formation controlling access, then extended it into Databricks with a bronze-silver-gold Delta Lake pipeline in PySpark to clean up raw Census data. From there I trained a PyTorch model to predict state-level population growth and used MLflow to keep track of runs as I iterated.</p>
+                <div class="project-meta">
+                    <span class="project-stack">AWS S3 &middot; Glue &middot; Databricks &middot; PySpark &middot; PyTorch &middot; MLflow</span>
+                    <div class="project-links">
+                        <a href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub &#8599;</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="9" cy="17" r="2.3"></circle>
-                            <circle cx="18" cy="15" r="2.3"></circle>
-                            <path d="M11.3 17V6.5l9-2v10.5"></path>
-                        </svg>
-                        <h3 class="card-title">Moodify</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">Moodify</h3>
-                            <p class="card-desc">A hackathon project that recommends music based on facial expression analysis, using computer vision to read mood and match it to a curated playlist.</p>
-                        </div>
-                        <div class="card-links">
-                            <a class="card-link" href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub</a>
-                        </div>
+            <article class="project">
+                <div class="project-head">
+                    <span class="project-num">04</span>
+                    <h2 class="project-title">Moodify</h2>
+                </div>
+                <p class="project-desc">A hackathon project that reads your expression through the webcam and recommends a playlist to match. Not the most serious thing I've built, but a fun one.</p>
+                <div class="project-meta">
+                    <span class="project-stack">Hackathon project</span>
+                    <div class="project-links">
+                        <a href="https://github.com/omgoswami24" target="_blank" rel="noopener">GitHub &#8599;</a>
                     </div>
                 </div>
-            </div>
+            </article>
 
         </div>
     </section>
@@ -132,105 +112,12 @@
 </main>
 
 <footer class="site-footer">
-    <p>&copy; 2026 Om Goswami</p>
+    <div class="page-wrap">
+        <p>&copy; 2026 Om Goswami</p>
+    </div>
 </footer>
 
-<script>
-(function () {
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var canvas = document.getElementById("bg-canvas");
-    if (!canvas || !canvas.getContext) return;
-    var ctx = canvas.getContext("2d");
-    var width, height, nodes = [];
-    var mouse = { x: null, y: null };
-
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-
-    function initNodes() {
-        var count = Math.min(85, Math.max(34, Math.floor((width * height) / 20000)));
-        nodes = [];
-        for (var i = 0; i < count; i++) {
-            nodes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.12,
-                vy: (Math.random() - 0.5) * 0.12,
-                r: 1.4 + Math.random() * 1.6
-            });
-        }
-    }
-
-    function step() {
-        ctx.clearRect(0, 0, width, height);
-
-        for (var i = 0; i < nodes.length; i++) {
-            var n = nodes[i];
-            n.x += n.vx;
-            n.y += n.vy;
-            if (n.x < 0 || n.x > width) n.vx *= -1;
-            if (n.y < 0 || n.y > height) n.vy *= -1;
-
-            for (var j = i + 1; j < nodes.length; j++) {
-                var m = nodes[j];
-                var dx = n.x - m.x, dy = n.y - m.y;
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.strokeStyle = "rgba(79, 163, 154, " + (0.2 * (1 - dist / 150)) + ")";
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(m.x, m.y);
-                    ctx.stroke();
-                }
-            }
-
-            if (mouse.x !== null) {
-                var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
-                var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-                if (mdist < 170) {
-                    ctx.strokeStyle = "rgba(217, 138, 79, " + (0.32 * (1 - mdist / 170)) + ")";
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    ctx.stroke();
-                }
-            }
-
-            ctx.fillStyle = "rgba(79, 163, 154, 0.65)";
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        if (!reduceMotion) {
-            requestAnimationFrame(step);
-        }
-    }
-
-    window.addEventListener("resize", function () {
-        resize();
-        initNodes();
-    });
-
-    window.addEventListener("mousemove", function (e) {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    window.addEventListener("mouseleave", function () {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    resize();
-    initNodes();
-    step();
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>

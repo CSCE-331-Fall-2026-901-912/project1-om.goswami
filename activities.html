@@ -3,110 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style1.css">
-<title>Om Goswami - Activities</title>
+<meta name="description" content="Om Goswami's activities outside of coursework: student organizations, teaching, community leadership with BAPS, and personal interests.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23d9824a'/%3E%3Ctext x='50' y='69' font-family='Georgia, serif' font-size='58' font-weight='700' fill='%23241f18' text-anchor='middle'%3EO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet">
+<link id="page-style" rel="stylesheet" href="style1.css">
+<script src="assets/style-init.js"></script>
+<title>Om Goswami &middot; Activities</title>
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
-    <div class="page-wrap">
-        <h1 class="site-title">Om Goswami</h1>
-        <nav class="site-nav">
+    <div class="page-wrap header-row">
+        <a class="site-mark" href="index.html">
+            <span class="site-mark-name">Om Goswami</span>
+            <span class="site-mark-role">Software Engineer</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav">
             <a href="index.html">Home</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="qualifications.html">Qualifications</a>
-            <a href="activities.html" class="active">Activities</a>
+            <a href="activities.html" class="active" aria-current="page">Activities</a>
             <a href="sandbox.html">Experience</a>
+            <button id="styleToggle" class="style-toggle" type="button" aria-label="Switch visual style">
+                <span class="style-toggle-track"><span class="style-toggle-thumb"></span></span>
+                <span class="style-toggle-label">Style <span id="styleToggleValue">02</span></span>
+            </button>
         </nav>
     </div>
 </header>
 
-<main class="page-wrap">
+<main class="page-wrap" id="main">
 
     <section class="section">
         <div class="section-heading">
-            <h2 class="section-title">Activities</h2>
+            <h1 class="section-title">Activities</h1>
             <span class="section-count">04 areas</span>
         </div>
-        <div class="card-grid">
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M8 6.5L3.5 12 8 17.5"></path>
-                            <path d="M16 6.5L20.5 12 16 17.5"></path>
-                            <path d="M13 5l-2 14"></path>
-                        </svg>
-                        <h3 class="card-title">Clubs &amp; Organizations</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">Clubs &amp; Organizations</h3>
-                            <p class="card-desc">I'm involved in the Aggie Competitive Programming Club, TAMU Cybersecurity Club, and Aggie Coding Club, staying sharp on algorithms, security, and hands-on coding outside the classroom.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="activities-grid">
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 4L2.5 8.5 12 13l9.5-4.5z"></path>
-                            <path d="M6 10.7v5c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-5"></path>
-                            <path d="M21.5 8.5v6"></path>
-                        </svg>
-                        <h3 class="card-title">Teaching Assistant</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">Teaching Assistant</h3>
-                            <p class="card-desc">As a TA at Texas A&amp;M, I teach Python fundamentals to 200+ first-year engineering students each semester through weekly office hours, 1:1 mentoring, and hands-on debugging sessions, and provide code review and feedback on programming assignments.</p>
-                        </div>
-                    </div>
+            <article class="activity activity--feature">
+                <div class="activity-photo-frame">
+                    <img class="activity-photo" src="mandir.jpg" alt="BAPS regional event with delegates gathered for a presentation" width="1200" height="800">
                 </div>
-            </div>
+                <div>
+                    <p class="activity-eyebrow">Since 2020</p>
+                    <h2 class="activity-title">BAPS: Project Manager &amp; Regional Core Team Lead</h2>
+                    <p class="activity-desc">The biggest thing I've worked on was a regional event for 600+ delegates: skits, light shows, presentations, the whole production. I also wrote guidelines that ended up getting used by 2,500 other leads and helped push attendance up about 35% the following year.</p>
+                    <p class="activity-links"><a href="https://www.baps.org" target="_blank" rel="noopener">Learn More &#8599;</a></p>
+                </div>
+            </article>
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front has-photo">
-                        <img class="card-photo" src="mandir.jpg" alt="BAPS event">
-                        <div class="card-photo-overlay"></div>
-                        <h3 class="card-title">BAPS &mdash; Project Manager &amp; Regional Core Team Lead</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">BAPS</h3>
-                            <p class="card-desc">Since August 2020, I've served as a Project Manager and Regional Core Team Lead with BAPS, orchestrating a large-scale event for 600+ delegates from the southwest region featuring skits, light shows, and presentations, and developing national guidelines for 2,500 leads that contributed to a 35% increase in attendance.</p>
-                        </div>
-                        <div class="card-links">
-                            <a class="card-link" href="https://www.baps.org" target="_blank" rel="noopener">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <article class="activity">
+                <p class="activity-eyebrow">Aug 2025 &ndash; Present</p>
+                <h2 class="activity-title">Teaching Assistant</h2>
+                <p class="activity-desc">I'm a TA for the intro Python course at Texas A&amp;M, which means office hours, a lot of 1:1 debugging sessions, and grading for over 200 first-year engineering students each semester. It's easily one of my favorite things I do here.</p>
+            </article>
 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-face flip-front">
-                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="5" width="18" height="12.5" rx="1.5"></rect>
-                            <path d="M10.2 8.3l4.8 3-4.8 3z" fill="currentColor" stroke="none"></path>
-                            <path d="M8 20.5h8"></path>
-                        </svg>
-                        <h3 class="card-title">TV Shows</h3>
-                    </div>
-                    <div class="flip-face flip-back">
-                        <div>
-                            <h3 class="card-title">TV Shows</h3>
-                            <p class="card-desc">Outside of school and work, I'm usually unwinding with a good TV show &mdash; always down for recommendations if you've got one.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <article class="activity">
+                <p class="activity-eyebrow">Ongoing</p>
+                <h2 class="activity-title">Clubs &amp; Organizations</h2>
+                <p class="activity-desc">I'm part of the Aggie Competitive Programming Club, the TAMU Cybersecurity Club, and the Aggie Coding Club. It's a good excuse to keep writing code that isn't for a grade.</p>
+            </article>
+
+            <article class="activity activity--minor">
+                <p class="activity-eyebrow">Off the clock</p>
+                <h2 class="activity-title">TV Shows</h2>
+                <p class="activity-desc">Outside of school and work, I'm usually watching something. Always down for recommendations if you've got one.</p>
+            </article>
 
         </div>
     </section>
@@ -114,105 +85,12 @@
 </main>
 
 <footer class="site-footer">
-    <p>&copy; 2026 Om Goswami</p>
+    <div class="page-wrap">
+        <p>&copy; 2026 Om Goswami</p>
+    </div>
 </footer>
 
-<script>
-(function () {
-    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var canvas = document.getElementById("bg-canvas");
-    if (!canvas || !canvas.getContext) return;
-    var ctx = canvas.getContext("2d");
-    var width, height, nodes = [];
-    var mouse = { x: null, y: null };
-
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-
-    function initNodes() {
-        var count = Math.min(85, Math.max(34, Math.floor((width * height) / 20000)));
-        nodes = [];
-        for (var i = 0; i < count; i++) {
-            nodes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.12,
-                vy: (Math.random() - 0.5) * 0.12,
-                r: 1.4 + Math.random() * 1.6
-            });
-        }
-    }
-
-    function step() {
-        ctx.clearRect(0, 0, width, height);
-
-        for (var i = 0; i < nodes.length; i++) {
-            var n = nodes[i];
-            n.x += n.vx;
-            n.y += n.vy;
-            if (n.x < 0 || n.x > width) n.vx *= -1;
-            if (n.y < 0 || n.y > height) n.vy *= -1;
-
-            for (var j = i + 1; j < nodes.length; j++) {
-                var m = nodes[j];
-                var dx = n.x - m.x, dy = n.y - m.y;
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    ctx.strokeStyle = "rgba(79, 163, 154, " + (0.2 * (1 - dist / 150)) + ")";
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(m.x, m.y);
-                    ctx.stroke();
-                }
-            }
-
-            if (mouse.x !== null) {
-                var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
-                var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-                if (mdist < 170) {
-                    ctx.strokeStyle = "rgba(217, 138, 79, " + (0.32 * (1 - mdist / 170)) + ")";
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(mouse.x, mouse.y);
-                    ctx.stroke();
-                }
-            }
-
-            ctx.fillStyle = "rgba(79, 163, 154, 0.65)";
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        if (!reduceMotion) {
-            requestAnimationFrame(step);
-        }
-    }
-
-    window.addEventListener("resize", function () {
-        resize();
-        initNodes();
-    });
-
-    window.addEventListener("mousemove", function (e) {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    window.addEventListener("mouseleave", function () {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    resize();
-    initNodes();
-    step();
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>
