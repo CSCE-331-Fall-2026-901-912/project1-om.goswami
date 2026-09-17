@@ -116,4 +116,4 @@ Then open `http://localhost:8000/index.html`.
 
 ## Deployment
 
-This repository is pulled/copied onto `people.tamu.edu/~om.goswami` by the author directly (not automated in this repo).
+This repository is pulled/copied onto `people.tamu.edu/~om.goswami` by the author directly.
