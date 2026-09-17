@@ -3,12 +3,13 @@
 
     /* ---------- Style switcher ---------- */
 
-    var link = document.getElementById("page-style");
+    var style1 = document.getElementById("style1-sheet");
+    var style2 = document.getElementById("style2-sheet");
     var toggle = document.getElementById("styleToggle");
     var valueEl = document.getElementById("styleToggleValue");
 
     function currentStyle() {
-        return link.getAttribute("href").indexOf("style2") !== -1 ? "style2" : "style1";
+        return style2 && !style2.disabled ? "style2" : "style1";
     }
 
     function renderToggle() {
@@ -20,10 +21,11 @@
         );
     }
 
-    if (link && toggle && valueEl) {
+    if (style1 && style2 && toggle && valueEl) {
         toggle.addEventListener("click", function () {
             var next = currentStyle() === "style1" ? "style2" : "style1";
-            link.setAttribute("href", next + ".css");
+            style1.disabled = next === "style2";
+            style2.disabled = next === "style1";
             try {
                 localStorage.setItem("site-style", next);
             } catch (e) {}

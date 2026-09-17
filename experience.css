@@ -84,9 +84,13 @@ a:hover {
 }
 
 .page-wrap {
-    max-width: 680px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 var(--space-5);
+}
+
+.record-intro {
+    max-width: 680px;
 }
 
 /* ---------- Header ---------- */
@@ -214,270 +218,198 @@ a:hover {
     color: var(--ink);
 }
 
-/* ---------- Release notes marker (shared by latest + history) ---------- */
+/* ---------- Pipeline: experience shown as build -> test -> deploy ---------- */
 
-.release-marker {
-    display: inline-block;
-    width: 1.4em;
-    color: var(--add);
-    font-family: var(--font-mono);
-    font-weight: 700;
+.pipeline {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-4);
+    margin: var(--space-8) 0 var(--space-7);
 }
 
-/* ---------- v3.0.0: the latest release, the focal point of the page ---------- */
+.pipeline::before {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    top: 2.05rem;
+    height: 1px;
+    background-color: var(--border);
+    z-index: 0;
+}
 
-.release-latest {
+.pipeline-arrow {
     position: relative;
-    overflow: hidden;
-    margin: var(--space-8) 0 var(--space-7);
-    padding: var(--space-7) var(--space-6);
+    z-index: 1;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--space-8);
+    font-family: var(--font-mono);
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--border);
+    background-color: var(--bg);
+}
+
+.stage {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--ink-muted);
+    padding: var(--space-5);
+    background-color: var(--bg);
+}
+
+.stage--done {
+    border-top-color: var(--add-on-light);
+}
+
+.stage--ongoing {
+    border-top-color: var(--ink);
+}
+
+.stage--live {
+    border-top-color: var(--accent);
     background-color: var(--ink);
     color: var(--bg);
-    animation: release-rise 600ms var(--ease-out-expo) both;
 }
 
-@keyframes release-rise {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Scroll reveal: JS adds .js-observing before watching, so a no-JS or
+   reduced-motion visitor always gets the fully visible default below. */
+.stage.js-observing {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo);
 }
 
-.release-watermark {
-    position: absolute;
-    z-index: 0;
-    right: -0.05em;
-    bottom: -0.18em;
-    font-family: var(--font-mono);
-    font-weight: 800;
-    font-size: clamp(3.5rem, 2rem + 9vw, 6.5rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: color-mix(in oklch, var(--bg) 9%, transparent);
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
+.stage.js-observing.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.release-head {
-    position: relative;
-    z-index: 1;
+.stage-meta {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-bottom: var(--space-5);
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.68rem;
 }
 
-.release-badge {
+.stage-label {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.stage--live .stage-label {
+    color: color-mix(in oklch, var(--bg) 65%, transparent);
+}
+
+.stage-status {
     display: inline-flex;
     align-items: center;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.release-badge-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    margin-right: var(--space-2);
-    animation: release-pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes release-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.35; }
-}
-
-.release-version {
-    color: color-mix(in oklch, var(--bg) 65%, transparent);
-}
-
-.release-version::before {
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 1em;
-    margin: 0 var(--space-3);
-    background-color: color-mix(in oklch, var(--bg) 30%, transparent);
-    vertical-align: -0.15em;
-}
-
-.release-date {
-    margin-left: auto;
-    color: color-mix(in oklch, var(--bg) 65%, transparent);
-}
-
-.release-org {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 var(--space-1);
-    font-family: var(--font-mono);
-    font-weight: 800;
-    font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.3rem);
-    letter-spacing: -0.01em;
-}
-
-.release-role {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 var(--space-5);
-    color: color-mix(in oklch, var(--bg) 72%, transparent);
-    font-size: 1rem;
-}
-
-.release-notes {
-    position: relative;
-    z-index: 1;
-    margin: 0 0 var(--space-5);
-    padding: 0;
-    list-style: none;
-    max-width: 60ch;
-    color: color-mix(in oklch, var(--bg) 88%, transparent);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-.release-stack {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    padding-top: var(--space-4);
-    border-top: 1px solid color-mix(in oklch, var(--bg) 16%, transparent);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--accent);
-    letter-spacing: 0.01em;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .release-latest {
-        animation: none;
-    }
-    .release-badge-dot {
-        animation: none;
-    }
-}
-
-/* ---------- History: earlier releases, connected like a commit graph ---------- */
-
-.changelog-history {
-    position: relative;
-    margin-top: var(--space-7);
-    padding-left: var(--space-6);
-}
-
-.changelog-history::before {
-    content: "";
-    position: absolute;
-    left: 4px;
-    top: 8px;
-    bottom: 8px;
-    width: 1px;
-    background-color: var(--border);
-}
-
-.changelog-row {
-    position: relative;
-    padding: var(--space-5) var(--space-3);
-    margin: 0 calc(-1 * var(--space-3));
-    border-top: 1px solid var(--border);
-    transition: background-color 200ms ease;
-}
-
-.changelog-row:first-child {
-    border-top: none;
-}
-
-.changelog-row::before {
-    content: "";
-    position: absolute;
-    left: calc(-1 * var(--space-6) + 1px);
-    top: var(--space-5);
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background-color: var(--bg);
-    border: 1px solid var(--ink-muted);
-}
-
-.changelog-row:hover {
-    background-color: var(--surface);
-}
-
-.changelog-meta {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-bottom: var(--space-2);
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-}
-
-.changelog-version {
-    color: var(--ink);
-    font-weight: 700;
-}
-
-.changelog-badge {
-    color: var(--ink-muted);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    border: 1px solid var(--border);
-    padding: 0.1rem 0.4rem;
-}
-
-.changelog-date {
-    margin-left: auto;
-    color: var(--ink-muted);
-}
-
-.changelog-org {
-    margin: 0 0 var(--space-1);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 0.98rem;
-    color: var(--ink);
-}
-
-.changelog-role {
-    margin: 0 0 var(--space-3);
-    color: var(--ink-muted);
-    font-size: 0.8rem;
-}
-
-.changelog-notes {
-    margin: 0 0 var(--space-3);
-    padding: 0;
-    list-style: none;
-    max-width: 62ch;
-    color: var(--ink-muted);
-    font-size: 0.92rem;
-    display: flex;
-    flex-direction: column;
     gap: var(--space-1);
-}
-
-.changelog-notes .release-marker {
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-weight: 700;
     color: var(--add-on-light);
 }
 
-.changelog-stack {
-    margin: 0;
+.stage--ongoing .stage-status {
+    color: var(--ink);
+}
+
+.stage-status--live {
+    color: var(--accent);
+}
+
+.stage-status-icon {
+    font-weight: 700;
+}
+
+.stage-status-icon--dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.stage-status-icon--pulse {
+    animation: stage-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes stage-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.stage-date {
+    margin: 0 0 var(--space-2);
     font-family: var(--font-mono);
     font-size: 0.72rem;
     color: var(--ink-muted);
+}
+
+.stage--live .stage-date {
+    color: color-mix(in oklch, var(--bg) 65%, transparent);
+}
+
+.stage-org {
+    margin: 0 0 var(--space-1);
+    font-family: var(--font-mono);
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.stage-role {
+    margin: 0 0 var(--space-4);
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+}
+
+.stage--live .stage-role {
+    color: color-mix(in oklch, var(--bg) 72%, transparent);
+}
+
+.stage-desc {
+    margin: 0 0 var(--space-4);
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    flex: 1;
+}
+
+.stage--live .stage-desc {
+    color: color-mix(in oklch, var(--bg) 88%, transparent);
+}
+
+.stage-stack {
+    margin: 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+}
+
+.stage--live .stage-stack {
+    border-top-color: color-mix(in oklch, var(--bg) 16%, transparent);
+    color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stage-status-icon--pulse {
+        animation: none;
+    }
 }
 
 /* ---------- Footer ---------- */
@@ -535,31 +467,31 @@ a:hover {
         padding: var(--space-2) 0;
     }
 
-    .release-latest {
-        padding: var(--space-6) var(--space-4);
+    .stage {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 960px) {
+    .pipeline {
+        flex-direction: column;
     }
 
-    .release-head {
-        gap: var(--space-2);
+    .pipeline::before {
+        left: 2.05rem;
+        right: auto;
+        top: var(--space-4);
+        bottom: var(--space-4);
+        width: 1px;
+        height: auto;
     }
 
-    .release-date {
-        margin-left: 0;
-    }
-
-    .release-version::before {
-        display: none;
-    }
-
-    .changelog-history {
-        padding-left: var(--space-5);
-    }
-
-    .changelog-row::before {
-        left: calc(-1 * var(--space-5) + 1px);
-    }
-
-    .changelog-date {
-        margin-left: 0;
+    .pipeline-arrow {
+        padding-top: 0;
+        align-self: center;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
+        transform: rotate(90deg);
     }
 }

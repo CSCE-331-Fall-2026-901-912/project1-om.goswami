@@ -39,59 +39,50 @@
     <section class="record-intro">
         <p class="log-kicker">GenAI Sandbox</p>
         <h1 class="log-title">My Experience</h1>
-        <p class="record-comment">// changelog: three releases, most recent first.</p>
+        <p class="record-comment">// pipeline: build &rarr; test &rarr; deploy.</p>
         <p class="record-comment record-comment--disclosure">/* Disclosure: content generated with genAI per Project 1 sandbox requirements. */</p>
     </section>
 
-    <section class="release release-latest" aria-labelledby="release-latest-heading">
-        <span class="release-watermark" aria-hidden="true">v3.0.0</span>
-        <div class="release-head">
-            <span class="release-badge"><span class="release-badge-dot"></span>Latest</span>
-            <span class="release-version">v3.0.0</span>
-            <span class="release-date">May 2026 &ndash; Present</span>
-        </div>
-        <h2 class="release-org" id="release-latest-heading">Visa</h2>
-        <p class="release-role">Software Engineering Intern</p>
-        <ul class="release-notes">
-            <li><span class="release-marker" aria-hidden="true">+</span>Designed, tested, and deployed the backend for an internal Vendor Intelligence Portal in an Agile environment.</li>
-            <li><span class="release-marker" aria-hidden="true">+</span>Shipped through a CI/CD pipeline to a production environment used by 50+ analysts and engineers, on FastAPI, PostgreSQL, and Pydantic.</li>
-            <li><span class="release-marker" aria-hidden="true">+</span>Built automation scripts orchestrating Claude Sonnet and Opus via LiteLLM to automate vendor intelligence extraction.</li>
-            <li><span class="release-marker" aria-hidden="true">+</span>Reduced manual research and reporting effort by roughly 70%.</li>
-        </ul>
-        <p class="release-stack">FastAPI &middot; PostgreSQL &middot; Pydantic &middot; LiteLLM</p>
-    </section>
+    <section class="pipeline" aria-label="Experience, shown as a build pipeline">
 
-    <section class="changelog-history" aria-label="Earlier releases">
-
-        <article class="changelog-row">
-            <div class="changelog-meta">
-                <span class="changelog-version">v2.0.0</span>
-                <span class="changelog-date">Aug 2025 &ndash; Present</span>
+        <article class="stage stage--done">
+            <div class="stage-meta">
+                <span class="stage-label">Stage 1 &middot; Build</span>
+                <span class="stage-status"><span class="stage-status-icon" aria-hidden="true">&#10003;</span>Shipped</span>
             </div>
-            <h3 class="changelog-org">Texas A&amp;M University</h3>
-            <p class="changelog-role">Undergraduate Teaching Assistant</p>
-            <ul class="changelog-notes">
-                <li><span class="release-marker" aria-hidden="true">+</span>Teach Python fundamentals (loops, conditionals, functions, and data structures) to 200+ first-year engineering students each semester.</li>
-                <li><span class="release-marker" aria-hidden="true">+</span>Run weekly office hours, 1:1 mentoring, and hands-on debugging sessions.</li>
-                <li><span class="release-marker" aria-hidden="true">+</span>Perform code review on programming assignments with detailed, code-level feedback.</li>
-            </ul>
-            <p class="changelog-stack">200+ Students &middot; Mentoring &middot; Code Review</p>
+            <p class="stage-date">Jan &ndash; Apr 2024</p>
+            <h2 class="stage-org">TRAIN AI Fellowship</h2>
+            <p class="stage-role">AI Fellow</p>
+            <p class="stage-desc">Designed and built an end-to-end AI-powered educational tool for machine-learning beginners, training NLP models with the Transformers library and integrating the Hugging Face API for real-time, conversational explanations.</p>
+            <p class="stage-stack">Python &middot; NLP &middot; Hugging Face API</p>
         </article>
 
-        <article class="changelog-row">
-            <div class="changelog-meta">
-                <span class="changelog-version">v1.0.0</span>
-                <span class="changelog-badge">Initial release</span>
-                <span class="changelog-date">Jan &ndash; Apr 2024</span>
+        <div class="pipeline-arrow" aria-hidden="true">&rsaquo;</div>
+
+        <article class="stage stage--ongoing">
+            <div class="stage-meta">
+                <span class="stage-label">Stage 2 &middot; Test</span>
+                <span class="stage-status"><span class="stage-status-icon stage-status-icon--dot" aria-hidden="true"></span>Ongoing</span>
             </div>
-            <h3 class="changelog-org">TRAIN Artificial Intelligence Fellowship</h3>
-            <p class="changelog-role">AI Fellow</p>
-            <ul class="changelog-notes">
-                <li><span class="release-marker" aria-hidden="true">+</span>Designed and built an end-to-end AI-powered educational tool to simplify machine learning concepts for beginners.</li>
-                <li><span class="release-marker" aria-hidden="true">+</span>Implemented core algorithms in Python and trained NLP models with the Transformers library.</li>
-                <li><span class="release-marker" aria-hidden="true">+</span>Integrated the Hugging Face API to power a real-time conversational Q&amp;A interface.</li>
-            </ul>
-            <p class="changelog-stack">Python &middot; NLP &middot; Hugging Face API</p>
+            <p class="stage-date">Aug 2025 &ndash; Present</p>
+            <h2 class="stage-org">Texas A&amp;M University</h2>
+            <p class="stage-role">Undergraduate Teaching Assistant</p>
+            <p class="stage-desc">Teach Python fundamentals (loops, conditionals, functions, data structures) to 200+ first-year engineers each semester through office hours, 1:1 mentoring, and hands-on debugging, plus code review with detailed feedback on every assignment.</p>
+            <p class="stage-stack">200+ Students &middot; Mentoring &middot; Code Review</p>
+        </article>
+
+        <div class="pipeline-arrow" aria-hidden="true">&rsaquo;</div>
+
+        <article class="stage stage--live">
+            <div class="stage-meta">
+                <span class="stage-label">Stage 3 &middot; Deploy</span>
+                <span class="stage-status stage-status--live"><span class="stage-status-icon stage-status-icon--dot stage-status-icon--pulse" aria-hidden="true"></span>Live now</span>
+            </div>
+            <p class="stage-date">May 2026 &ndash; Present</p>
+            <h2 class="stage-org">Visa</h2>
+            <p class="stage-role">Software Engineering Intern</p>
+            <p class="stage-desc">Design, test, and deploy the backend for an internal Vendor Intelligence Portal through a CI/CD pipeline, used in production by 50+ analysts and engineers on FastAPI, PostgreSQL, and Pydantic. Automate vendor research with Claude Sonnet and Opus via LiteLLM, cutting manual effort by roughly 70%.</p>
+            <p class="stage-stack">FastAPI &middot; PostgreSQL &middot; LiteLLM &middot; ~70% Time Saved</p>
         </article>
 
     </section>
@@ -105,6 +96,7 @@
 </footer>
 
 <script src="assets/site.js" defer></script>
+<script src="assets/pipeline-reveal.js" defer></script>
 
 </body>
 </html>
