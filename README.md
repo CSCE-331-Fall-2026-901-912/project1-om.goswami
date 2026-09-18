@@ -7,7 +7,7 @@ Personal portfolio website for **Project 1** (CSCE web design/frontend course), 
 | | |
 |---|---|
 | **Landing page** | https://people.tamu.edu/~om.goswami |
-| **Git repository** | https://github.com/tamu-edu-students/project1-om.goswami |
+| **Git repository** | https://github.com/CSCE-331-Fall-2026-901-912/project1-om.goswami |
 
 ## Pages
 
