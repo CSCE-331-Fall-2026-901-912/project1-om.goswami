@@ -2,6 +2,8 @@
 
 Personal portfolio website for **Project 1** (CSCE web design/frontend course), built as static HTML, CSS, and vanilla JavaScript — no frameworks, libraries, or templates.
 
+hello om
+
 ## Submission links
 
 | | |
